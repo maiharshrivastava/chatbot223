@@ -1,16 +1,8 @@
-/* Chatbot.module.css */
-.chatbotContainer {
-    max-width: 600px;
-    margin: 3rem auto;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    background: #ffffff;
-    overflow: hidden;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+.chatbotContainer:global(body) {
+    background-color: #f7f9fb;
+    margin: 0;
+    padding: 0;
 }
-
 .header {
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
     padding: 1.2rem;
@@ -89,9 +81,3 @@
     background: #feb47b;
 }
 
-/* Wrap the global selector in :global() */
-:global(body) {
-    background-color: #f7f9fb;
-    margin: 0;
-    padding: 0;
-}
