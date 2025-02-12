@@ -37,6 +37,8 @@
     border-radius: 20px;
     max-width: 80%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333;
+    /* Ensure text is visible */
 }
 
 .botMessage {
@@ -47,6 +49,8 @@
     border-radius: 20px;
     max-width: 80%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333;
+    /* Ensure text is visible */
 }
 
 .inputContainer {
@@ -64,6 +68,8 @@
     font-size: 1rem;
     outline: none;
     transition: border-color 0.3s ease;
+    color: #333;
+    /* Set text color for input */
 }
 
 .inputField:focus {
@@ -85,6 +91,7 @@
 .sendButton:hover {
     background: #feb47b;
 }
+
 body {
     background-color: #f7f9fb;
     margin: 0;

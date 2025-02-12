@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import axios from "axios";
+import styles from "./Chatbot.module.css"; // Import your CSS module
 
 const Chat = () => {
-  const [messages, setMessages] = useState([]); // Removed TypeScript types
+  const [messages, setMessages] = useState([]); 
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -34,27 +35,23 @@ const Chat = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-4 bg-gray-100 rounded-lg shadow-md">
-      <h2 className="text-xl font-bold mb-4">Chat with VolkAI</h2>
-
-      <div className="h-80 overflow-y-auto bg-white p-3 rounded border">
+    <div className={styles.chatbotContainer}>
+      <div className={styles.header}>Chat with VolkAI</div>
+      <div className={styles.chatWindow}>
         {messages.map((msg, index) => (
           <div
             key={index}
-            className={`p-2 my-2 rounded ${
-              msg.role === "user" ? "bg-blue-100 text-right" : "bg-gray-200 text-left"
-            }`}
+            className={msg.role === "user" ? styles.userMessage : styles.botMessage}
           >
             <strong>{msg.role === "user" ? "You" : "VolkAI"}:</strong> {msg.content}
           </div>
         ))}
-        {loading && <p className="text-gray-500">VolkAI is typing...</p>}
+        {loading && <p style={{ color: "#333" }}>VolkAI is typing...</p>}
       </div>
-
-      <div className="mt-4 flex">
+      <div className={styles.inputContainer}>
         <input
           type="text"
-          className="flex-grow p-2 border rounded-l"
+          className={styles.inputField}
           placeholder="Type your message..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -62,7 +59,7 @@ const Chat = () => {
         />
         <button
           onClick={sendMessage}
-          className="bg-blue-500 text-white p-2 rounded-r hover:bg-blue-600"
+          className={styles.sendButton}
           disabled={loading}
         >
           Send
